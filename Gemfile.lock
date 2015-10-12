@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/andreareginato/redis-throttle.git
+  revision: 98cf0bf5f2c3955408f2b5667c7b6ddcd459b6d4
+  specs:
+    redis-throttle (0.0.1)
+      activesupport
+      hiredis
+      rack
+      rack-throttle
+      redis
+      redis-namespace
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,6 +55,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (6.0.2)
+    cancancan (1.12.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -56,6 +69,7 @@ GEM
     execjs (2.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    hiredis (0.6.0)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -86,8 +100,11 @@ GEM
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     rack (1.6.4)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-throttle (0.4.0)
+      rack (>= 1.0.0)
     rails (4.2.3)
       actionmailer (= 4.2.3)
       actionpack (= 4.2.3)
@@ -114,6 +131,9 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    redis (3.2.1)
+    redis-namespace (1.5.2)
+      redis (~> 3.0, >= 3.0.4)
     sass (3.4.19)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -156,13 +176,16 @@ DEPENDENCIES
   awesome_print
   bcrypt (~> 3.1.7)
   byebug
+  cancancan
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
   pry
   pry-rails
+  rack-cors
   rails (= 4.2.3)
+  redis-throttle!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

@@ -46,3 +46,6 @@ group :development, :test do
 end
 
 gem 'kaminari'
+gem 'cancancan'
+gem 'redis-throttle', git: 'git://github.com/andreareginato/redis-throttle.git'
+gem 'rack-cors', require: 'rack/cors'

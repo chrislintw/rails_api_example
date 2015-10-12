@@ -2,6 +2,8 @@ class Api::V1::BaseController < ApplicationController
   # disable cookie and CSRF token
   protect_from_forgery with: :null_session
   before_action :destroy_session
+  skip_before_action :verify_authenticity_token
+  #load_and_authorize_resource
 
   attr_accessor :current_user
 
