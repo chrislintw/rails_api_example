@@ -1,5 +1,8 @@
 ## README
 
+#Documents
+view `http://localhost:3000/documents`
+
 curl -i http://localhost:3000/api/v1/users/1
 ```
 {"id":1,"email":"canlin@gmail.com","name":"canlin"}

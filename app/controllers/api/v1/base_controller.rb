@@ -3,7 +3,6 @@ class Api::V1::BaseController < ApplicationController
   protect_from_forgery with: :null_session
   before_action :destroy_session
   skip_before_action :verify_authenticity_token
-  #load_and_authorize_resource
 
   attr_accessor :current_user
 
@@ -17,8 +16,9 @@ class Api::V1::BaseController < ApplicationController
     render nothing: true, status: opts[:status]
   end
   def authenticate_user!
+    pry
     token, options = ActionController::HttpAuthentication::Token.token_and_options(request)
-    user_email = options.blank?? nil : options[:email]
+    user_email = options.blank? ? nil : options[:email]
     user = user_email && User.find_by(email: user_email)
     if user && ActiveSupport::SecurityUtils.secure_compare(user.authentication_token, token)
       self.current_user = user

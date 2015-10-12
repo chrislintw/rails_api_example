@@ -8,6 +8,14 @@ class Api::V1::SessionsController < Api::V1::BaseController
     end
 
   end
+  swagger_controller :sessions, "Session"
+  swagger_api :create do
+    summary "Login"
+    param :form, "user[email]", :string, :optional, "Email"
+    param :form, "user[password]", :string, :optional, "Password"
+    response :not_found
+    response :not_acceptabled
+  end
 
   private
 
